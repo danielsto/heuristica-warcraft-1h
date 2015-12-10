@@ -56,8 +56,6 @@ public class Ejecutar {
 		arg = arg.toLowerCase();
 		if (arg.equals("h1")) {
 			return Heuristica.H1;
-		} else if (arg.equals("h2")) {
-			return Heuristica.H2;
 		} else {
 			System.err.println("Heuristica desconocida: " + arg);
 			System.exit(-1);
@@ -117,7 +115,7 @@ public class Ejecutar {
 
 	/* Identificador para las heurísticas creadas */
 	public enum Heuristica {
-		H1, H2
+		H1
 	};
 
 	/**
