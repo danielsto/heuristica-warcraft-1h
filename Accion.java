@@ -10,7 +10,7 @@ import aima.core.agent.impl.DynamicAction;
 public class Accion extends DynamicAction {
 
 	public enum tipoAccion {
-		OESTE, ESTE, NORTE, SUR
+		OESTE, ESTE, NORTE, SUR, NORESTE, NOROESTE, SURESTE, SUROESTE
 	}
 
 	public tipoAccion tipo;
