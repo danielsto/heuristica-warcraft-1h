@@ -393,10 +393,6 @@ public class Ejecutar {
 				System.out.println("Heuristica: h1");
 				hf = new Heuristica1();
 				break;
-			case H2:
-				System.out.println("Heurística: h2");
-				hf = new Heuristica2();
-				break;
 			default:
 				System.out.println("Heuristica invalida");
 				System.exit(-1);
