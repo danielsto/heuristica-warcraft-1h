@@ -47,6 +47,30 @@ public class ResultadoAccion implements ResultFunction {
 				sucesor.x = sucesor.x + 1;
 			}
 			break;
+		case NOROESTE:
+			if (sucesor.y != 0 && sucesor.x != 0) {
+				sucesor.x = sucesor.x - 1;
+				sucesor.y = sucesor.y - 1;
+			}
+			break;
+		case NORESTE:
+			if (sucesor.y != 511 && sucesor.x != 0) {
+				sucesor.x = sucesor.x - 1;
+				sucesor.y = sucesor.y + 1;
+			}
+			break;
+		case SURESTE:
+			if (sucesor.y != 511 && sucesor.x != 511) {
+				sucesor.x = sucesor.x + 1;
+				sucesor.y = sucesor.y + 1;
+			}
+			break;
+		case SUROESTE:
+			if (sucesor.y != 0 && sucesor.x != 511) {
+				sucesor.x = sucesor.x + 1;
+				sucesor.y = sucesor.y - 1;
+			}
+			break;
 		}
 
 		return sucesor;
