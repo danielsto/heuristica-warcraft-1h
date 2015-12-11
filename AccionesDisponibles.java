@@ -58,25 +58,29 @@ public class AccionesDisponibles implements ActionsFunction {
 		
 		if (coordX != 511 && coordY != 511
 				&& Ejecutar.getObstaculo(coordX + 1, coordY) != '@'
-				&& Ejecutar.getObstaculo(coordX, coordY + 1) != '@') {
+				&& Ejecutar.getObstaculo(coordX, coordY + 1) != '@'
+				&& Ejecutar.getObstaculo(coordX + 1, coordY + 1) != '@') {
 			acciones.add(new Accion(Accion.tipoAccion.SURESTE));
 		}
 		
 		if (coordX != 511 && coordY != 0
 				&& Ejecutar.getObstaculo(coordX + 1, coordY) != '@'
-				&& Ejecutar.getObstaculo(coordX, coordY - 1) != '@') {
+				&& Ejecutar.getObstaculo(coordX, coordY - 1) != '@'
+				&& Ejecutar.getObstaculo(coordX + 1, coordY - 1) != '@') {
 			acciones.add(new Accion(Accion.tipoAccion.SUROESTE));
 		}
 		
 		if (coordX != 0 && coordY != 511
 				&& Ejecutar.getObstaculo(coordX - 1, coordY) != '@'
-				&& Ejecutar.getObstaculo(coordX, coordY + 1) != '@') {
+				&& Ejecutar.getObstaculo(coordX, coordY + 1) != '@'
+				&& Ejecutar.getObstaculo(coordX - 1, coordY + 1) != '@') {
 			acciones.add(new Accion(Accion.tipoAccion.NORESTE));
 		}
 
 		if (coordX != 0 && coordY != 0
 				&& Ejecutar.getObstaculo(coordX - 1, coordY) != '@'
-				&& Ejecutar.getObstaculo(coordX, coordY - 1) != '@') {
+				&& Ejecutar.getObstaculo(coordX, coordY - 1) != '@'
+				&& Ejecutar.getObstaculo(coordX - 1, coordY + 1) != '@') {
 			acciones.add(new Accion(Accion.tipoAccion.NOROESTE));
 		}
 
