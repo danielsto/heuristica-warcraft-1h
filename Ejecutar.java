@@ -260,6 +260,29 @@ public class Ejecutar {
 				coordY = coordY + 1;
 				System.out.println("(" + coordX + ", " + coordY + ")");
 				matriz[coordX][coordY] = 'X';
+			case "NOROESTE":
+				coordX = coordX - 1;
+				coordY = coordY - 1;
+				System.out.println("(" + coordX + ", " + coordY + ")");
+				matriz[coordX][coordY] = 'X';
+				break;
+			case "NORESTE":
+				coordX = coordX - 1;
+				coordY = coordY + 1;
+				System.out.println("(" + coordX + ", " + coordY + ")");
+				matriz[coordX][coordY] = 'X';
+				break;
+			case "SUROESTE":
+				coordX = coordX + 1;
+				coordY = coordY - 1;
+				System.out.println("(" + coordX + ", " + coordY + ")");
+				matriz[coordX][coordY] = 'X';
+				break;
+			case "SURESTE":
+				coordX = coordX + 1;
+				coordY = coordY + 1;
+				System.out.println("(" + coordX + ", " + coordY + ")");
+				matriz[coordX][coordY] = 'X';
 			default:
 				break;
 			}
