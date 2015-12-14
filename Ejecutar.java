@@ -331,13 +331,15 @@ public class Ejecutar {
 	 * @param metric
 	 *            Metric que contiene los datos de coste total, tamaño de la
 	 *            lista, tamaño máximo de la lista y nodos expandidos.
+	 * @param planLength
+	 *            Longitud del camino recorrido
 	 * @throws IOException
 	 *             si el fichero existe pero es un directorio en vez de un
 	 *             archivo, no existe pero no puede ser creado, o no puede ser
 	 *             abierto por cualquier otra razón.
 	 */
-	public static void statsMap(String argumento, String time, Metrics metric)
-			throws IOException {
+	public static void statsMap(String argumento, String time, Metrics metric,
+			int planLength) throws IOException {
 		/*
 		 * Se crea un archivo con el nombre del archivo del mapa sumando la
 		 * extensión .statistics que contiene los datos de la ejecución de la
@@ -353,6 +355,8 @@ public class Ejecutar {
 		try {
 			bw2 = new BufferedWriter(new FileWriter(fichero));
 			bw2.write(time);
+			bw2.write("\n");
+			bw2.write("Plan Length: " + planLength);
 			bw2.write("\n");
 			for (String key : metric.keySet()) {
 				String property = metric.get(key);
@@ -449,6 +453,7 @@ public class Ejecutar {
 			long t2 = System.currentTimeMillis();
 
 			printActions(actionList);
+			int planLength = actionList.size();
 
 			String time = "Time: " + (t2 - t) / 1000.0 + " s";
 			System.out.println(time);
@@ -462,7 +467,7 @@ public class Ejecutar {
 			 */
 			try {
 				mapaSalida(args[0], estadoInicial, actionList);
-				statsMap(args[0], time, metric);
+				statsMap(args[0], time, metric, planLength);
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
